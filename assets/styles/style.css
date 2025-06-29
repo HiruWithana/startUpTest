@@ -1,0 +1,15 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.outlined-number {
+  font-family: monospace;
+  font-size: 1.5rem; /* adjust as needed */
+  -webkit-text-stroke: 1px #555;
+  color: transparent;
+}
+
+.cat-btn-active {
+  color: white;
+  background-color: #1e1e1e;
+}

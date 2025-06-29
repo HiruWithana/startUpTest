@@ -1,0 +1,720 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+</head>
+
+<body class="overflow-x-hidden">
+
+    <header class="relative z-50 w-full flex-none text-sm/6 font-semibold text-slate-900 mb-4 py-4">
+
+
+        <nav class="max-w-7xl mx-auto">
+            <div class="relative flex items-center justify-between py-2 px-4 md:px-6">
+
+                <!-- logo -->
+                <a class="" href="index.html">
+                    <span class="sr-only">Tailwind UI</span>
+                    <!-- logo svg -->
+                    <img src="assets/img/logo.png" class="w-30" alt="">
+                </a>
+
+                <!-- button -->
+                <a href="https://tailwindcss.com/blog/tailwindcss-v4"
+                    class="group ml-6 hidden sm:flex lg:hidden xl:flex items-center gap-2 rounded-full bg-white/25 px-3 py-2 text-xs text-slate-900 ring-1 ring-black/[0.08] hover:bg-white/50 hover:ring-black/[0.13]">
+                    <!-- ai icon -->
+                    <svg class="size-4 fill-sky-500" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+
+                    <span class="font-semibold">Register for our Newsletter</span>
+
+                    <svg width="2" height="2" class="fill-slate-900">
+                        <circle cx="1" cy="1" r="1"></circle>
+                    </svg>
+
+                    <span class="font-medium"><span>Learn more</span></span>
+
+                    <svg viewBox="0 0 5 8" class="h-2 w-[5px] fill-black/30 group-hover:fill-black/60"
+                        fill-rule="evenodd" clip-rule="evenodd">
+                        <path
+                            d="M.2.24A.75.75 0 0 1 1.26.2l3.5 3.25a.75.75 0 0 1 0 1.1L1.26 7.8A.75.75 0 0 1 .24 6.7L3.148 4 .24 1.3A.75.75 0 0 1 .2.24Z">
+                        </path>
+                    </svg>
+
+                </a>
+
+                <!-- menu content -->
+                <div class="ml-auto hidden lg:flex items-center">
+                    <a href="services.html">Services</a>
+                    <a class="ml-8" href="projects.html">Portfolio</a>
+                    <a class="ml-8" href="/templates/catalyst">About</a>
+                    <a class="ml-8" href="/documentation">Docs</a>
+                </div>
+
+
+                <!-- nav icon -->
+                <button type="button" class="-my-1 -mr-1 ml-6 flex size-8 items-center justify-center lg:hidden"
+                    onclick="handleMenu()">
+                    <i class="fa-solid fa-bars text-gray-600"></i>
+                </button>
+
+                <!-- Button Group -->
+                <div class="hidden lg:ml-8 lg:flex lg:items-center lg:border-l lg:border-slate-900/15 lg:pl-8">
+                    <!-- sign in -->
+                    <a href="/login">Contact Us</a>
+                    <!-- sign up -->
+                    <a class="inline-flex justify-center rounded-full text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 -my-2.5 ml-8"
+                        href="/all-access">
+                        <span>
+                            Get a Free Quote
+                            <span aria-hidden="true">→</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- mobile nav content -->
+                <div id="nav-dialog" class="hidden py-6 fixed z-10 lg:hidden bg-white inset-0">
+
+                    <!-- header -->
+                    <div class="flex items-center justify-between px-4 md:px-6">
+
+                        <!-- logo -->
+                        <a class="" href="index.html">
+                            <span class="sr-only">Tailwind UI</span>
+                            <!-- logo svg -->
+                            <img src="assets/img/logo.png" class="w-30" alt="">
+                        </a>
+
+                        <!-- button -->
+                        <a href="https://tailwindcss.com/blog/tailwindcss-v4"
+                            class="group ml-6 hidden sm:flex lg:hidden xl:flex items-center gap-2 rounded-full bg-white/25 px-3 py-2 text-xs text-slate-900 ring-1 ring-black/[0.08] hover:bg-white/50 hover:ring-black/[0.13]">
+                            <!-- ai icon -->
+                            <svg class="size-4 fill-sky-500" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+
+                            <span class="font-semibold">Register for our Newsletter</span>
+
+                            <svg width="2" height="2" class="fill-slate-900">
+                                <circle cx="1" cy="1" r="1"></circle>
+                            </svg>
+
+                            <span class="font-medium"><span>Learn more</span></span>
+
+                            <svg viewBox="0 0 5 8" class="h-2 w-[5px] fill-black/30 group-hover:fill-black/60"
+                                fill-rule="evenodd" clip-rule="evenodd">
+                                <path
+                                    d="M.2.24A.75.75 0 0 1 1.26.2l3.5 3.25a.75.75 0 0 1 0 1.1L1.26 7.8A.75.75 0 0 1 .24 6.7L3.148 4 .24 1.3A.75.75 0 0 1 .2.24Z">
+                                </path>
+                            </svg>
+
+                        </a>
+
+
+
+                        <!-- close button icon -->
+                        <button type="button" class="-my-1 -mr-1 ml-6 flex size-8 items-center justify-center lg:hidden"
+                            onclick="handleMenu()">
+                            <i class="fa-solid fa-xmark text-gray-600"></i>
+                        </button>
+
+
+                    </div>
+
+                    <!-- content -->
+                    <div class="flex flex-col gap-5 pt-12 pb-5 border-b border-slate-900/15">
+                        <a class="ml-8 text-lg" href="services.html">Services</a>
+                        <a class="ml-8 text-lg" href="projects.html">Portfolio</a>
+                        <a class="ml-8 text-lg" href="/templates/catalyst">About</a>
+                        <a class="ml-8 text-lg" href="/documentation">Documentations</a>
+                        <a class="ml-8 text-lg" href="/documentation">Contact Us</a>
+                    </div>
+
+                    <div class="flex py-5 px-4">
+                        <button class="bg-gray-900 text-white rounded-full py-2.5 px-8 text-center font-semibold">
+                            <span>Get a Free Quote</span>
+                            <i class="fa-solid fa-arrow-right ml-3"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- hero section -->
+    <div class="px-4 md:px-0">
+        <div
+            class="max-w-7xl mx-auto bg-[#FFF0E5] pt-6 md:pt-12 rounded-4xl grid md:grid-cols-2 relative overflow-hidden md:overflow-visible">
+
+            <!-- left side -->
+            <div class="px-4 md:px-12">
+                <!-- Header -->
+                <div class="lg:flex items-center gap-4 rounded-lg">
+                    <!-- Profile Images -->
+                    <div class="flex -space-x-2 md:-space-x-6">
+                        <img class="w-8 h-8 md:w-16 md:h-16 rounded-full border-2 border-white"
+                            src="assets/img/client1.avif" alt="User 1" />
+                        <img class="w-8 h-8 md:w-16 md:h-16 rounded-full border-2 border-white"
+                            src="assets/img/client2.avif" alt="User 2" />
+                        <img class="w-8 h-8 md:w-16 md:h-16 rounded-full border-2 border-white"
+                            src="assets/img/client3.avif" alt="User 3" />
+                        <img class="w-8 h-8 md:w-16 md:h-16 rounded-full border-2 border-white"
+                            src="assets/img/client4.avif" alt="User 4" />
+                        <img class="w-8 h-8 md:w-16 md:h-16 rounded-full border-2 border-white"
+                            src="assets/img/client5.avif" alt="User 5" />
+                    </div>
+
+                    <!-- Rating & Text -->
+                    <div class="flex flex-col gap-1">
+                        <div class="flex text-yellow-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-xs">1,000+ customers joined</p>
+                    </div>
+                </div>
+
+                <!-- main title -->
+                <h2 class="font-serif text-5xl md:text-7xl xl:text-7xl my-6">Future-proof your business</h2>
+
+                <!-- intro text -->
+                <p class="max-w-md text-base">
+                    We help startups and businesses transform their ideas into powerful digital experiences that stand
+                    out, perform fast, and convert better.
+                </p>
+
+                <!-- CTA  -->
+                <button class="w-full md:w-auto bg-slate-950 text-slate-50 p-4 rounded-full text-sm font-semibold mt-6">
+                    Request a Consultation
+                </button>
+            </div>
+
+
+            <!-- right side -->
+            <div class="overflow-hidden">
+                <img src="assets/img/mainBackground.avif" class="pt-10 -mb-10 xl:pt-0 xl:-mb-10" alt="">
+            </div>
+
+
+
+            <!-- main character -->
+            <img src="assets/img/mainCharacter.avif"
+                class="absolute xl:w-1/3 md:w-2/5 w-3/4 -bottom-[30%] -right-[15%] md:top-0 md:-right-[10%] " alt="">
+
+
+
+        </div>
+    </div>
+
+    <!-- features section -->
+    <section class="px-4 md:px-0">
+        <div class="max-w-7xl mx-auto mt-6 rounded-4xl grid md:grid-cols-3 lg:grid-cols-4 gap-6 relative">
+
+            <div class="bg-[#FFD8D1] rounded-4xl px-4 md:px-8 py-8 relative overflow-hidden">
+                <img src="assets/img/circT.png" class="absolute w-40 top-0 right-0 opacity-2 z-0" alt="">
+                <h3 class="text-2xl font-serif leading-none">Built For <br />Performance</h3>
+                <p class="mt-4">Flawless web apps built to perform and scale.</p>
+            </div>
+
+            <div class="bg-[#DBF6FF] rounded-4xl px-4 md:px-8 py-8 relative overflow-hidden">
+                <img src="assets/img/line.png" class="absolute w-40 top-0 right-0 opacity-2 z-0" alt="">
+                <h3 class="text-2xl font-serif leading-none">Timeless Logo <br />Designs </h3>
+                <p class="mt-4">Unique logos that perfectly tell your brand’s story.</p>
+            </div>
+
+            <div class="bg-[#FFEDC9] rounded-4xl px-4 md:px-8 py-8 relative overflow-hidden">
+                <img src="assets/img/grassB.png" class="absolute w-40 bottom-0 right-0 opacity-2 z-0" alt="">
+                <h3 class="text-2xl font-serif leading-none">Marketing That <br />Works</h3>
+                <p class="mt-4">Reach your audience and grow with confidence.</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="px-4 md:px-0">
+        <div id="bentoGrid" class="max-w-7xl mx-auto bg-slate-50 mt-6 py-12 px-10 rounded-4xl">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-serif font-semibold text-gray-900">
+                    Custom Web Design Solutions <br />That Elevate Your Brand Online
+                </h2>
+                <p class="mt-4 text-gray-700 max-w-md">
+                    We create stunning, responsive websites that engage visitors and drive business growth seamlessly.
+                </p>
+            </div>
+
+            <div class="mt-16 grid gap-10 md:grid-cols-3">
+                <!-- Measure -->
+                <div>
+                    <div class="border-t-4 border-cyan-600 pt-6">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <span class="outlined-number mr-2">01</span> <span class="font-bold">Design</span>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            We craft aesthetically pleasing and functional designs that reflect your brand’s identity,
+                            creating memorable user experiences that are both beautiful and easy to navigate.
+                        </p>
+                        <a href="#" class="mt-4 inline-block text-base font-semibold text-gray-900 hover:underline">
+                            Learn How It Works →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Offset -->
+                <div>
+                    <div class="border-t-4 border-cyan-600 pt-6">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <span class="outlined-number mr-2">02</span> <span class="font-bold">Performance</span>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Optimize your website to load quickly and run smoothly, ensuring visitors have a seamless
+                            experience that keeps them engaged and reduces bounce rates.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reduce -->
+                <div>
+                    <div class="border-t-4 border-cyan-700 pt-6">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <span class="outlined-number mr-2">03</span> <span class="font-bold">SEO & GEO</span>
+                        </h3>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            Improving rankings in search engines while optimizing content for AI-powered
+                            search engines and generative AI models.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- bento grid -->
+    <div class="px-4">
+        <div class="max-w-7xl mx-auto mt-6 rounded-4xl pb-20 container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 w-full cards" animation="list">
+
+                <!-- UI/UX Design -->
+                <div class="md:col-span-1 stackCard bg-rose-300 rounded-4xl p-5 flex flex-col justify-between relative overflow-hidden"
+                    animation-item="100px">
+                    <img src="assets/img/circB.png" class="absolute bottom-0 right-0 opacity-2 z-0" alt="">
+
+                    <div class="z-10">
+                        <div class="text-sm mb-40 flex justify-between items-center">
+                            <h5>Designing</h5>
+                            <i class="fa-brands fa-figma text-xl"></i>
+                        </div>
+
+
+                        <div>
+                            <h2 class="text-2xl font-serif font-medium mb-1 text-slate-950">UI/UX Design</h2>
+                            <p class="text-sm mb-4 text-black">
+                                Visually appealing user interfaces to enhance customer satisfaction.
+                            </p>
+                            <div class="text-sm flex gap-4">
+                                <p>
+                                    <i class="fa-solid fa-star"></i>
+                                    4.1
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    12%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Web Application -->
+                <div class="md:col-span-1 stackCard bg-blue-200 rounded-4xl p-5 flex flex-col justify-between relative overflow-hidden"
+                    animation-item="125px">
+                    <img src="assets/img/circT.png" class="absolute top-0 right-0 opacity-2 z-0" alt="">
+
+                    <div class="z-10">
+                        <div class="text-sm mb-40 flex justify-between items-center">
+                            <h5>Development</h5>
+                            <i class="fa-brands fa-webflow text-xl"></i>
+                        </div>
+
+
+                        <div>
+                            <h2 class="text-2xl font-serif font-medium mb-1">Web Application</h2>
+                            <p class="text-sm mb-4">
+                                Dynamic and powerful web apps to enhance your online presence.
+                            </p>
+                            <div class="text-sm flex gap-4">
+                                <p>
+                                    <i class="fa-solid fa-star"></i>
+                                    4.1
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    12%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Logo & Brand Design -->
+                <div class="md:col-span-2 stackCard bg-emerald-200 rounded-4xl p-5 flex flex-col justify-between relative overflow-hidden"
+                    animation-item="150px">
+                    <img src="assets/img/line.png" class="absolute top-0 right-0 opacity-2 z-0" alt="">
+
+                    <div class="z-10 flex flex-col justify-between h-full">
+
+                        <div class="text-sm mb-40 flex justify-between items-center">
+                            <h5>Branding</h5>
+                            <i class="fa-solid fa-pen-nib text-xl"></i>
+                        </div>
+
+
+                        <div>
+                            <h2 class="text-2xl font-serif font-medium mb-1">Logo & Brand Design</h2>
+                            <p class="text-sm mb-4">
+                                Unique logos and complete branding solutions that establish your company’s
+                                identity and make a lasting impression on your audience.
+                            </p>
+                            <div class="text-sm flex gap-4">
+                                <p>
+                                    <i class="fa-solid fa-star"></i>
+                                    4.1
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    12%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Digital Marketing Solutions -->
+                <div class="md:col-span-2 stackCard bg-orange-200 rounded-4xl p-5 flex flex-col justify-between relative overflow-hidden"
+                    animation-item="175px">
+                    <img src="assets/img/grassS.png" class="absolute top-0 left-0 opacity-2 z-0 md:w-1/2" alt="">
+
+                    <div class="z-10 flex flex-col justify-between h-full">
+
+                        <div class="text-sm mb-40 flex justify-between items-center">
+                            <h5>Branding</h5>
+                            <i class="fa-solid fa-pen-nib text-xl"></i>
+                        </div>
+
+
+                        <div>
+                            <h2 class="text-2xl font-serif font-medium mb-1">Digital Marketing Solutions</h2>
+                            <p class="text-sm mb-4">
+                                Strategic digital marketing services including SEO, social media management, and paid
+                                campaigns to grow your online presence and attract customers.
+                            </p>
+                            <div class="text-sm flex gap-4">
+                                <p>
+                                    <i class="fa-solid fa-star"></i>
+                                    4.1
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    12%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- E-commerce Solutions -->
+                <div class="md:col-span-1 stackCard bg-pink-200 rounded-4xl p-5 flex flex-col justify-between relative overflow-hidden"
+                    animation-item="200px">
+                    <img src="assets/img/circB.png" class="absolute bottom-0 right-0 opacity-2 z-0" alt="">
+
+                    <div class="z-10">
+                        <div class="text-sm mb-40 flex justify-between items-center">
+                            <h5>Development</h5>
+                            <i class="fa-brands fa-shopify text-xl"></i>
+                        </div>
+
+
+                        <div>
+                            <h2 class="text-2xl font-serif font-medium mb-1">E-commerce Solutions</h2>
+                            <p class="text-sm mb-4">
+                                Launching and managing online stores with ease.
+                            </p>
+                            <div class="text-sm flex gap-4">
+                                <p>
+                                    <i class="fa-solid fa-star"></i>
+                                    4.1
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    12%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Software Consulting -->
+                <div class="md:col-span-1 stackCard bg-purple-300 rounded-4xl p-5 flex flex-col justify-between relative overflow-hidden"
+                    animation-item="225px">
+                    <img src="assets/img/grassB.png" class="absolute bottom-0 right-0 opacity-2 z-0" alt="">
+
+                    <div class="z-10">
+                        <div class="text-sm mb-40 flex justify-between items-center">
+                            <h5>Consulting</h5>
+                            <i class="fa-solid fa-certificate text-xl"></i>
+                        </div>
+
+
+                        <div>
+                            <h2 class="text-2xl font-serif font-medium mb-1">Software Consulting</h2>
+                            <p class="text-sm mb-4">
+                                Providing strategic guidance to help companies make informed
+                                decisions.
+                            </p>
+                            <div class="text-sm flex gap-4">
+                                <p>
+                                    <i class="fa-solid fa-star"></i>
+                                    4.1
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    12%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-white">
+
+    </div>
+
+
+
+
+
+    <!-- footer -->
+    <footer class="bg-white pt-20 md:pt-30 p-4 relative">
+
+        <img src="assets/img/footerIcon.png" class="absolute rotate-12 -top-10 right-6 w-40 z-0" alt="">
+
+        <div class="max-w-7xl mx-auto">
+
+            <!-- main footer -->
+            <div class="grid grid-cols-1 md:grid-cols-6 pb-40">
+
+                <!-- logo and slogan with social media icons -->
+                <div class="md:col-span-3 mb-8">
+                    <!-- logo -->
+                    <img src="assets/img/logo.png" class="w-40" alt="">
+                    <!-- slogan -->
+                    <p class="max-w-md mt-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+                        repellat.</p>
+
+                    <div class="flex gap-4 mt-6">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                        <i class="fa-brands fa-facebook-f text-xl"></i>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 mb-8">
+                    <h5 class="text-lg font-serif font-semibold mb-2 md:mb-4">Insurance</h5>
+                    <div class="space-y-1">
+                        <p>How it Works</p>
+                        <p>Pricing</p>
+                        <p>Contact Us</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 mb-8">
+                    <h5 class="text-lg font-serif font-semibold mb-2 md:mb-4">Resources</h5>
+                    <div class="space-y-1">
+                        <p>FAQs</p>
+                        <p>Help</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 mb-8">
+                    <h5 class="text-lg font-serif font-semibold mb-2 md:mb-4">Company</h5>
+                    <div class="space-y-1">
+                        <p>About</p>
+                        <p>Data Usage</p>
+                        <p>Join the Team</p>
+                        <p>Careers</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- secondary footer -->
+            <div class="md:flex justify-between pb-4">
+
+                <div class="mb-1.5 md:mb-0">
+                    <p class="text-sm text-gray-800">©Company Name. All Rights Reserved.</p>
+                </div>
+
+                <div class="hidden md:flex text-sm text-gray-800 divide-x divide-gray-300">
+                    <p class="pr-4">Privacy Policy</p>
+                    <p class="pl-4">Terms of Service</p>
+                </div>
+
+
+                <div>
+                    <p class="text-sm text-gray-800">Powered by <span class="font-semibold">Hiru Withana</span></p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <!-- navbar -->
+    <script>
+        const navDialog = document.getElementById('nav-dialog');
+        function handleMenu() {
+            navDialog.classList.toggle('hidden');
+        }
+    </script>
+
+    <!-- background color -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.create({
+            trigger: "#bentoGrid",
+            start: "bottom center", // When the bottom of #bentoGrid hits the center of the viewport
+            onEnter: () => {
+                gsap.to("body", {
+                    backgroundColor: "#1e1e1e", // Tailwind 'gray-900'
+                    duration: 0.5
+                });
+            },
+            onLeaveBack: () => {
+                gsap.to("body", {
+                    backgroundColor: "#ffffff", // Original background
+                    duration: 0.5
+                });
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.matchMedia({
+
+            // Mobile only (max-width: 768px)
+            "(max-width: 640px)": function () {
+                const items = gsap.utils.toArray(".stackCard");
+                const lastCard = items[items.length - 1];
+
+                let lastCardHeight = lastCard.clientHeight;
+                const totaOffset = parseFloat(lastCard.getAttribute("animation-item")) || 0;
+                lastCardHeight += totaOffset;
+
+                items.forEach((item, index) => {
+                    let tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top top+=" + item.getAttribute("animation-item"),
+                            endTrigger: ".container",
+                            end: `bottom top+=${lastCardHeight}px`,
+                            pin: true,
+                            pinSpacing: false,
+                            scrub: true,
+                            markers: false
+                        }
+                    });
+
+                    if (item === lastCard) {
+                        tl.to(item, {
+                            scale: 0.9 + 0.02 * index,
+                            transformOrigin: "center center"
+                        });
+                    } else {
+                        tl.to(item, {
+                            opacity: 0.4,
+                            scale: 0.9 + 0.02 * index,
+                            transformOrigin: "center center"
+                        });
+                    }
+                });
+            }
+
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>
